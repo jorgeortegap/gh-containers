@@ -11,7 +11,7 @@ env:
 jobs:
   test:
     environment: testing
-    runs-on: ubuntu-slim
+    runs-on: ubuntu-latest
     container:
       image: node:latest
     env:
@@ -39,9 +39,7 @@ jobs:
           echo "MONGODB_USERNAME: $MONGODB_USERNAME"
   deploy:
     needs: test
-    runs-on: ubuntu-slim
-    container:
-      image: node:latest
+    runs-on: ubuntu-latest
     steps:
       - name: Output information
         env:
